@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { Redirect } from 'react-router-dom';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
@@ -12,6 +13,7 @@ class CreateNote extends Component {
     date: new Date(),
     editing: false,
     _id: "",
+    redirect: false,
   };
 
   async componentDidMount() {
@@ -45,11 +47,13 @@ class CreateNote extends Component {
     }
 
     if (this.state.editing) {
-      await axios.put("https://protected-brook-06855.herokuapp.com/api/notes/" + this.state._id, newNote);
+      await axios.put("https://protected-brook-06855.herokuapp.com/api/notes/" + this.state._id, newNote)
+        .then(() => this.setState({ redirect: true }));
     } else {
-      await axios.post("https://protected-brook-06855.herokuapp.com/api/notes", newNote);
+      await axios.post("https://protected-brook-06855.herokuapp.com/api/notes", newNote)
+        .then(() => this.setState({ redirect: true }));
     }
-    window.location.href = "/";
+
   };
 
   onInputChange = (e) => {
@@ -65,6 +69,8 @@ class CreateNote extends Component {
   };
 
   render() {
+    if (this.state.redirect) return <Redirect to='/'/>;
+
     return (
       <div className="row">
         <div className="col-md-6 offset-md-3">
