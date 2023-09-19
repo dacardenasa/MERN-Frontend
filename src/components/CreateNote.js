@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import axios from "axios";
 import { Redirect } from 'react-router-dom';
 import DatePicker from "react-datepicker";
+import 'dotenv/config';
 import "react-datepicker/dist/react-datepicker.css";
-
 class CreateNote extends Component {
   state = {
     users: [],
@@ -15,16 +15,15 @@ class CreateNote extends Component {
     _id: "",
     redirect: false,
   };
-
   async componentDidMount() {
-    const { data } = await axios.get("https://protected-brook-06855.herokuapp.com/api/users");
+    const { data } = await axios.get(`${process.env.REACT_APP_API_URL}/users`);
     this.setState({
       users: data.map((user) => user.username),
-      userSelected: data[0].username,
+      userSelected: data[0]?.username ?? '',
     });
 
     if (this.props.match.params.id) {
-      const { data } = await axios.get("https://protected-brook-06855.herokuapp.com/api/notes/" + this.props.match.params.id);
+      const { data } = await axios.get(`${process.env.REACT_APP_API_URL}/notes/${this.props.match.params.id}`);
       this.setState({
         userSelected: data.author,
         title: data.title,
@@ -47,10 +46,10 @@ class CreateNote extends Component {
     }
 
     if (this.state.editing) {
-      await axios.put("https://protected-brook-06855.herokuapp.com/api/notes/" + this.state._id, newNote)
+      await axios.put(`${process.env.REACT_APP_API_URL}/notes/` + this.state._id, newNote)
         .then(() => this.setState({ redirect: true }));
     } else {
-      await axios.post("https://protected-brook-06855.herokuapp.com/api/notes", newNote)
+      await axios.post(`${process.env.REACT_APP_API_URL}/notes`, newNote)
         .then(() => this.setState({ redirect: true }));
     }
 
@@ -125,7 +124,7 @@ class CreateNote extends Component {
               </div>
 
               <div className="form-group"></div>
-              <button type="submit" className="btn btn-primary">
+              <button type="submit" className="btn btn-primary" disabled={!this.state.users.length}>
                 { this.props.match.params.id ? "Update" : "Save" }
               </button>
             </form>
