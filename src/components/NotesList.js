@@ -3,13 +3,15 @@ import axios from 'axios';
 import { format } from 'timeago.js';
 import { Link } from 'react-router-dom'
 
+import 'dotenv/config';
+
 class NotesList extends Component {
   state = {
     notes: []
   }
 
   getNotes = async () => {
-    const { data } = await axios.get("https://protected-brook-06855.herokuapp.com/api/notes");
+    const { data } = await axios.get(`${process.env.REACT_APP_API_URL}/notes`);
     this.setState({
       notes: data,
     });
@@ -22,7 +24,7 @@ class NotesList extends Component {
   deleteNote = async (id) => {
     const option = window.confirm("¿Are you sure you want to delete this note?");
     if (option === true) {
-      await axios.delete("https://protected-brook-06855.herokuapp.com/api/notes/" + id);
+      await axios.delete(`${process.env.REACT_APP_API_URL}/notes/${id}`);
       this.getNotes();
     } 
   }

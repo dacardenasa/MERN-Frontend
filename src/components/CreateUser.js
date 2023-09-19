@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import 'dotenv/config';
 
 class CreateUser extends Component {
   state = {
@@ -8,7 +9,7 @@ class CreateUser extends Component {
   };
 
   getUsers = async () => {
-    const users = await axios.get("https://protected-brook-06855.herokuapp.com/api/users");
+    const users = await axios.get(`${process.env.REACT_APP_API_URL}/users`);
     this.setState({
       users: users.data,
     });
@@ -26,7 +27,7 @@ class CreateUser extends Component {
 
   onSubmit = async (e) => {
     e.preventDefault();
-    await axios.post("https://protected-brook-06855.herokuapp.com/api/users", {
+    await axios.post(`${process.env.REACT_APP_API_URL}/users`, {
       username: this.state.username
     });
     this.setState({ username: "" });
@@ -34,7 +35,7 @@ class CreateUser extends Component {
   }
 
   deleteUser = async (id) => {
-    await axios.delete("https://protected-brook-06855.herokuapp.com/api/users/" + id);
+    await axios.delete(`${process.env.REACT_APP_API_URL}/users/${id}`);
     this.getUsers();
   }
 
