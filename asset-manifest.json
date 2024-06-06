@@ -1,25 +1,25 @@
 {
   "files": {
     "main.css": "/MERN-Frontend/static/css/main.19d421d9.chunk.css",
-    "main.js": "/MERN-Frontend/static/js/main.2dee346e.chunk.js",
-    "main.js.map": "/MERN-Frontend/static/js/main.2dee346e.chunk.js.map",
-    "runtime-main.js": "/MERN-Frontend/static/js/runtime-main.6ac33cf8.js",
-    "runtime-main.js.map": "/MERN-Frontend/static/js/runtime-main.6ac33cf8.js.map",
-    "static/css/2.b56a0318.chunk.css": "/MERN-Frontend/static/css/2.b56a0318.chunk.css",
-    "static/js/2.53ad2bbf.chunk.js": "/MERN-Frontend/static/js/2.53ad2bbf.chunk.js",
-    "static/js/2.53ad2bbf.chunk.js.map": "/MERN-Frontend/static/js/2.53ad2bbf.chunk.js.map",
+    "main.js": "/MERN-Frontend/static/js/main.f3e4f4d1.chunk.js",
+    "main.js.map": "/MERN-Frontend/static/js/main.f3e4f4d1.chunk.js.map",
+    "runtime-main.js": "/MERN-Frontend/static/js/runtime-main.9a9eceff.js",
+    "runtime-main.js.map": "/MERN-Frontend/static/js/runtime-main.9a9eceff.js.map",
+    "static/css/2.9764a1c3.chunk.css": "/MERN-Frontend/static/css/2.9764a1c3.chunk.css",
+    "static/js/2.19158bc3.chunk.js": "/MERN-Frontend/static/js/2.19158bc3.chunk.js",
+    "static/js/2.19158bc3.chunk.js.map": "/MERN-Frontend/static/js/2.19158bc3.chunk.js.map",
     "index.html": "/MERN-Frontend/index.html",
-    "precache-manifest.706eab69ea72d2ee10a031ffdda39c4f.js": "/MERN-Frontend/precache-manifest.706eab69ea72d2ee10a031ffdda39c4f.js",
+    "precache-manifest.9e75a39d4c6fb4f6cc4bb77e42fabfb4.js": "/MERN-Frontend/precache-manifest.9e75a39d4c6fb4f6cc4bb77e42fabfb4.js",
     "service-worker.js": "/MERN-Frontend/service-worker.js",
-    "static/css/2.b56a0318.chunk.css.map": "/MERN-Frontend/static/css/2.b56a0318.chunk.css.map",
+    "static/css/2.9764a1c3.chunk.css.map": "/MERN-Frontend/static/css/2.9764a1c3.chunk.css.map",
     "static/css/main.19d421d9.chunk.css.map": "/MERN-Frontend/static/css/main.19d421d9.chunk.css.map",
-    "static/js/2.53ad2bbf.chunk.js.LICENSE.txt": "/MERN-Frontend/static/js/2.53ad2bbf.chunk.js.LICENSE.txt"
+    "static/js/2.19158bc3.chunk.js.LICENSE.txt": "/MERN-Frontend/static/js/2.19158bc3.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.6ac33cf8.js",
-    "static/css/2.b56a0318.chunk.css",
-    "static/js/2.53ad2bbf.chunk.js",
+    "static/js/runtime-main.9a9eceff.js",
+    "static/css/2.9764a1c3.chunk.css",
+    "static/js/2.19158bc3.chunk.js",
     "static/css/main.19d421d9.chunk.css",
-    "static/js/main.2dee346e.chunk.js"
+    "static/js/main.f3e4f4d1.chunk.js"
   ]
 }
